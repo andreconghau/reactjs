@@ -3,6 +3,7 @@ import Textfield from '@atlaskit/textfield';
 import Button from '@atlaskit/button';
 import React, {useCallback, useState} from "react";
 import {v4} from 'uuid';
+import AddIcon from '@atlaskit/icon/glyph/add'
 
 function App() {
     const [todoList, setTodoList] = useState([]);
@@ -35,6 +36,15 @@ function App() {
     }, [textInput, todoList]);
 
 
+    const onCheckButtonClick = useCallback((id) => {
+        console.log(id);
+        setTodoList((prevState) =>
+            prevState.map(
+                (todo) => todo.id === id ? {...todo, isCompleted: true} : todo
+            )
+        );
+    }, []);
+
     return (
         <>
             <p>Todo list</p>
@@ -45,6 +55,7 @@ function App() {
                         <Button
                             appearance="primary" isDisabled={!textInput}
                             onClick={onAddBtnClick}
+                            iconAfter={<span className={"add-icon"}><AddIcon primaryColor={"white"}/></span>}
                         >
                             Add new item
                         </Button>
@@ -53,7 +64,7 @@ function App() {
                     value={textInput}
                     onChange={onTextInputChange}
                 />
-                <TodoList todoList={todoList}/>
+                <TodoList todoList={todoList} onCheckButtonClick={onCheckButtonClick}/>
             </div>
 
         </>
