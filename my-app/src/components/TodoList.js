@@ -2,12 +2,12 @@ import React from "react";
 import Todo from "./Todo";
 
 
-function TodoList() {
+function TodoList({todoList}) {
     return (
         <div className={"todo-list-item"}>
-            <Todo />
-            <Todo />
-            <Todo />
+            {
+                todoList.map(todo => <Todo key={todo.name} todo={todo}/>)
+            }
         </div>
     )
 }
