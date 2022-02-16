@@ -16,4 +16,6 @@ code {
 .todo-list-wrapper {
   color: rebeccapurple;
   font-weight: bold;
+  width: 50%;
+  alignment: center;
 }
