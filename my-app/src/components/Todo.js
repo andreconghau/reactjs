@@ -9,7 +9,7 @@ margin-top:5px;
 `;
 
 function Todo({todo}) {
-    return <ButtonStyled key={todo.name} shouldFitContainer>{todo.name}</ButtonStyled>;
+    return <ButtonStyled key={todo.id} shouldFitContainer>{todo.name}</ButtonStyled>;
 }
 
 export default Todo;

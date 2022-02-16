@@ -27,3 +27,9 @@ Lưu trữ cac giá trị nội tại trong components hiện tại
 
 ## props
 Dữ liệu truyền từ ngoài vào, từ element cha
+
+
+
+## tips
+
+- khi call event onChange va onClick thì component sẽ thay đổi và việc thay đổi props sẽ làm các component con bên trong phải re-render lại => giải pháp là dùng hook `usecallback` https://reactjs.org/docs/hooks-reference.html#usecallback
