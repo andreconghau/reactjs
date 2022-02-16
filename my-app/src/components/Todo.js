@@ -9,7 +9,7 @@ margin-top:5px;
 
 &,
 &:hover {
-    ${(p) => p.iscompleted && css`
+    ${(p) => p.iscompleted == 'true' && css`
         text-decoration: line-through;
     
     `}

@@ -29,6 +29,19 @@ Lưu trữ cac giá trị nội tại trong components hiện tại
 Dữ liệu truyền từ ngoài vào, từ element cha
 
 
+## React Hook useEffect
+- nếu truyền một `[]` thì tương tự `componentDidMount`
+```js
+useEffect(() => {}, []);
+```
+- nhưng nếu truyền tham số vào thì nó sẽ thay đổi khi tham số đó thay đổi, `componentDidUpdate`
+```js
+useEffect(() => {
+        
+    }, [todoList]); 
+```
+
+
 
 ## tips
 
