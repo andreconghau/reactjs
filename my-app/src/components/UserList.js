@@ -7,6 +7,8 @@ import DropdownMenu, {
     DropdownItemGroup,
 } from '@atlaskit/dropdown-menu';
 
+import Tooltip from '@atlaskit/tooltip';
+
 
 const user_enpoint = "https://reqres.in/api/users";
 
@@ -59,7 +61,16 @@ function UserList() {
                             {
                                 key: v4(),
                                 content: (
-                                    <Avatar src={user.avatar} name={user.first_name} size="medium"/>
+                                    <Tooltip content={user.first_name}>
+                                        <Avatar
+                                            name={user.first_name}
+                                            src={user.avatar}
+                                            size="large"
+                                            onClick={console.log}
+                                            presence={'online'}
+                                            label={user.first_name}
+                                        />
+                                    </Tooltip>
                                 ),
                             },
                             {
