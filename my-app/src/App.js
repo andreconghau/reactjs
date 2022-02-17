@@ -3,7 +3,8 @@ import Textfield from '@atlaskit/textfield';
 import Button from '@atlaskit/button';
 import React, {useCallback, useEffect, useState} from "react";
 import {v4} from 'uuid';
-import AddIcon from '@atlaskit/icon/glyph/add'
+import AddIcon from '@atlaskit/icon/glyph/add';
+import UserList from "./components/UserList";
 
 function App() {
     const [todoList, setTodoList] = useState([]);
@@ -20,9 +21,8 @@ function App() {
     }, []); // componentDidMount
 
     useEffect(() => {
-    localStorage.setItem(TODO_APP_STORAGE, JSON.stringify(todoList));
+        localStorage.setItem(TODO_APP_STORAGE, JSON.stringify(todoList));
     }, [todoList]); // luc nay khi todoList thay doi thi sẽ run method nay
-
 
 
     // Todo cái này sẽ bắc render lại component khi run
@@ -91,7 +91,8 @@ function App() {
                 />
                 <TodoList todoList={todoList} onCheckButtonClick={onCheckButtonClick}/>
             </div>
-
+            <hr/>
+            <UserList/>
         </>
     );
 }
